@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        height: 500px;
+        width: 500px;
+        background-color: blue;
+      }
+
+      .box {
+        height: 20px;
+        width: 20px;
+        background-color: #ff0000;
+        border-radius: 100%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script>
+      const container = document.querySelector(".container");
+      container.addEventListener("mousemove", (e) => {
+        const box = document.createElement("div");
+        box.className = "box";
+        box.style.top = e.clientY + "px";
+        box.style.left = e.clientX + "px";
+        container.appendChild(box);
+        console.log(e.clientX, e.clientY);
+      });
+    </script>
+  </body>
+</html>
